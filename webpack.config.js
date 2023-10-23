@@ -3,16 +3,16 @@ const path = require('path');
 const threadLoader = {
     loader: 'thread-loader',
     options: {
-        workers: 4,
+        workers: 2,
         // additional node.js arguments
         workerNodeArgs: ['--max-old-space-size=4096'],
-        workerParallelJobs: 3,
+        workerParallelJobs: 2,
     },
 };
 
 const entrypoint_chunks = [
     'entrypoint',
-    ...[...Array(7).keys()].map((i) => `entrypoint_${i+2}`)
+    ...[...Array(1).keys()].map((i) => `entrypoint_${i+2}`)
 ];
 
 module.exports = {
